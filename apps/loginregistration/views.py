@@ -2,11 +2,8 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import *
 
-
-
 def index(request):
     return render(request,'loginregistration/index.html')
-
 
 def success(request):
     try:
@@ -18,8 +15,6 @@ def success(request):
     except KeyError:
         return redirect('/')
     
-
-
 def regis(request):
     result = User.objects.regis_validator(request.POST)
     if type(result) == list:
