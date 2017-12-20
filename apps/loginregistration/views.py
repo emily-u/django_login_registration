@@ -2,9 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from .models import *
 
-#================================================#
-#                 RENDER METHODS                 #
-#================================================#
+
 
 def index(request):
     return render(request,'loginregistration/index.html')
@@ -21,9 +19,6 @@ def success(request):
         return redirect('/')
     
 
-#================================================#
-#                PROCESS METHODS                 #
-#================================================#
 
 def regis(request):
     result = User.objects.regis_validator(request.POST)
